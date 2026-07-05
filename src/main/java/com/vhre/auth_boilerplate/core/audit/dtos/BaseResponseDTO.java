@@ -12,9 +12,11 @@ public abstract class BaseResponseDTO {
     @Schema(description = "Unique record identifier", example = "550e8400-e29b-41d4-a716-446655440000")
     private UUID id;
 
+    @JsonProperty("created_at")
     @Schema(description = "Exact date the record was created")
     private LocalDateTime created_at;
 
+    @JsonProperty("updated_at")
     @Schema(description = "Date of the last modification to the record")
     private LocalDateTime updated_at;
 }
