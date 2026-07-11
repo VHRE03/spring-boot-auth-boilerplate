@@ -3,6 +3,7 @@ package com.vhre.auth_boilerplate.modules.roles.controller;
 import com.vhre.auth_boilerplate.modules.roles.dto.RoleRequestDTO;
 import com.vhre.auth_boilerplate.modules.roles.dto.RoleResponseDTO;
 import com.vhre.auth_boilerplate.modules.roles.service.RoleService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.RequestBody;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/roles")
 @RequiredArgsConstructor
+@Tag(name = "Roles", description = "Endpoints for roles management")
 public class RoleController {
     private final RoleService service;
 

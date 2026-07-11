@@ -9,7 +9,7 @@ public record RoleRequestDTO(
         @NotBlank(message = "The role name cannot be empty")
         @Pattern(
                 regexp = "^ROLE_[A-Z_]+$",
-                message = "The role must begin with ‘ROLE_’ and contain only uppercase letters and underscores. (Note: The system will automatically convert your entry to uppercase.)"
+                message = "The role must begin with ‘ROLE_’ and contain only letters and underscores. (Note: The system will automatically convert your entry to uppercase.)"
         )
         @Schema(
                 description = "Full name of the security role",
