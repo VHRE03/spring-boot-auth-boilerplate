@@ -1,10 +1,9 @@
-package com.vhre.auth_boilerplate.modules.token.entity;
+package com.vhre.auth_boilerplate.modules.tokens.base.entity;
 
 import com.vhre.auth_boilerplate.core.audit.AbstractAuditBase;
 import com.vhre.auth_boilerplate.modules.users.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
