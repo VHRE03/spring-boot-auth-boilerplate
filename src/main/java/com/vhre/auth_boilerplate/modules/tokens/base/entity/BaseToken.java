@@ -4,6 +4,7 @@ import com.vhre.auth_boilerplate.core.audit.AbstractAuditBase;
 import com.vhre.auth_boilerplate.modules.users.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 public class BaseToken extends AbstractAuditBase {
     @Column(nullable = false)
     private String token;

@@ -5,6 +5,7 @@ import com.vhre.auth_boilerplate.core.security.service.JwtService;
 import com.vhre.auth_boilerplate.modules.auth.dto.LoginRequestDTO;
 import com.vhre.auth_boilerplate.modules.auth.dto.TokenResponseDTO;
 import com.vhre.auth_boilerplate.modules.tokens.refresh.entity.RefreshToken;
+import com.vhre.auth_boilerplate.modules.tokens.refresh.service.RefreshTokenService;
 import com.vhre.auth_boilerplate.modules.users.entity.User;
 import com.vhre.auth_boilerplate.modules.users.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

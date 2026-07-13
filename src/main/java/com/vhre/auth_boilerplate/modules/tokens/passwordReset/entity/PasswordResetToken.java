@@ -4,6 +4,7 @@ import com.vhre.auth_boilerplate.modules.tokens.base.entity.BaseToken;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "password_reset_tokens")
@@ -11,6 +12,6 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 public class PasswordResetToken extends BaseToken {
 }

@@ -4,13 +4,13 @@ import com.vhre.auth_boilerplate.modules.tokens.base.entity.BaseToken;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "refresh_tokens")
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
+@SuperBuilder
 public class RefreshToken extends BaseToken {
 }
