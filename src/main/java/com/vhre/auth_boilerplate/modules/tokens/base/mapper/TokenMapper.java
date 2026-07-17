@@ -1,4 +1,4 @@
-package com.vhre.auth_boilerplate.modules.tokens.mapper;
+package com.vhre.auth_boilerplate.modules.tokens.base.mapper;
 
 import com.vhre.auth_boilerplate.modules.tokens.passwordReset.dto.PasswordResetTokenResponseDTO;
 import com.vhre.auth_boilerplate.modules.tokens.passwordReset.entity.PasswordResetToken;

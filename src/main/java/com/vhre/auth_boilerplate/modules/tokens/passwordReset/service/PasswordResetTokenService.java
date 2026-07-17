@@ -1,6 +1,8 @@
 package com.vhre.auth_boilerplate.modules.tokens.passwordReset.service;
 
 import com.vhre.auth_boilerplate.core.exception.ResourceNotFoundException;
+import com.vhre.auth_boilerplate.modules.tokens.passwordReset.dto.NewPasswordRequestDTO;
+import com.vhre.auth_boilerplate.modules.tokens.passwordReset.dto.PasswordResetRequestDTO;
 import com.vhre.auth_boilerplate.modules.tokens.passwordReset.entity.PasswordResetToken;
 import com.vhre.auth_boilerplate.modules.tokens.passwordReset.repository.PasswordResetTokenRepository;
 import com.vhre.auth_boilerplate.modules.users.entity.User;
@@ -36,6 +38,18 @@ public class PasswordResetTokenService {
     }
 
     public void resetPassword(NewPasswordRequestDTO dto) {
-        PasswordResetToken resetToken = resetTokenRepository.findByToken(dto.token());
+        PasswordResetToken resetToken = resetTokenRepository.findByToken(dto.token())
+                .orElseThrow(() -> new ResourceNotFoundException("Invalid or missing reset token"));
+
+        if (resetToken.getExpiryDate().isBefore(LocalDateTime.now())) {
+            resetTokenRepository.delete(resetToken);
+            throw new RuntimeException("Reset token has expired");
+        }
+
+        User user = resetToken.getUser();
+        user.setPassword(passwordEncoder.encode(dto.newPassword()));
+        userRepository.save(user);
+
+        resetTokenRepository.delete(resetToken);
     }
 }

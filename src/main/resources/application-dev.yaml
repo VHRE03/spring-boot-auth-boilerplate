@@ -1,14 +1,16 @@
 spring:
   application:
     name: auth-boilerplate
-    security:
-      jwt:
-        secret-key: 367a397a24432646294a404e635266556a586e3272357538782f413f4428472b
-        expiration: 86400000
   datasource:
     url: jdbc:postgresql://localhost:5434/auth_boilerplate_dev
     username: admin
     password: 412i08926g45ehfR
+
+application:
+  security:
+    jwt:
+      secret-key: 367a397a24432646294a404e635266556a586e3272357538782f413f4428472b
+      expiration: 86400000
 
 springdoc:
   swagger-ui:
